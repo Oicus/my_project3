@@ -27,3 +27,12 @@ To run the script, use the following command in the terminal or command prompt:
 
 ```sh
 python port_scanner.py <target_ip> <start_port> <end_port>
+
+Notes
+Ensure you have the necessary permissions to scan the target IP address.
+Unauthorized scanning of systems may be illegal and result in severe consequences. Always obtain proper authorization before running security scans.
+License
+This project is licensed under the MIT License.
+
+Code
+This `README.md` file provides a clear description of the script, its features, and how to use it, along with the actual code for easy reference.
