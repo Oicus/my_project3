@@ -1,38 +1,48 @@
-# Port Scanner
+# Port Scanner Script
 
-## Description
-This script performs a port scan on a given target IP address over a specified range of ports. It uses multi-threading to speed up the scanning process.
+## Overview
 
-### Features:
-1. **Command Line Arguments**:
-   - The script uses the `argparse` library to collect the target IP address and port range from the command line.
-2. **Socket Creation**:
-   - A TCP socket is created using `socket.socket(socket.AF_INET, socket.SOCK_STREAM)`. `AF_INET` specifies the IPv4 address family, and `SOCK_STREAM` specifies the TCP protocol.
-3. **Connection Attempt**:
-   - The `sock.connect_ex((target_ip, port))` function attempts to connect to the specified IP address and port. If the connection is successful, the function returns 0; otherwise, it returns an error code.
-4. **Thread Usage**:
-   - A separate thread is created for scanning each port. This accelerates the scanning process by allowing multiple ports to be scanned simultaneously.
-5. **Timeout**:
-   - The `sock.settimeout(1)` function sets a 1-second timeout for each connection attempt. This prevents the connection attempt from hanging indefinitely.
-6. **Storing Results**:
-   - Open ports are stored in the `open_ports` list, which is printed after the scan is complete.
+This project implements a simple port scanner using Python. The script scans a range of ports on a specified target IP address to determine which ports are open.
+
+## Features
+
+- Scans a range of ports on a target IP address
+- Uses multithreading for faster scanning
+- Prints the list of open ports
+
+## Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/Oicus/my_project3.git
+    cd my_project3
+    ```
+
+2. Install the required dependencies:
+    ```sh
+    pip install -r requirements.txt
+    ```
 
 ## Usage
 
-### 1. Save the Script:
-Save the code to a file, for example, `port_scanner.py`.
-
-### 2. Run the Script:
-To run the script, use the following command in the terminal or command prompt:
-
+To run the port scanner, use the following command:
 ```sh
-python port_scanner.py <target_ip> <start_port> <end_port>
+python portscan.py <target_ip> <start_port> <end_port>
+```
 
-Notes
-Ensure you have the necessary permissions to scan the target IP address.
-Unauthorized scanning of systems may be illegal and result in severe consequences. Always obtain proper authorization before running security scans.
-License
-This project is licensed under the MIT License.
+Example:
+```sh
+python portscan.py 192.168.1.1 1 1024
+```
 
-Code
-This `README.md` file provides a clear description of the script, its features, and how to use it, along with the actual code for easy reference.
+## Legal Disclaimer
+
+This project is intended for educational purposes only. The use of this tool for scanning targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state, and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+
+## Development and Contributions
+
+This project is open to contributions and further development. Feel free to fork the repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT License](LICENSE)
